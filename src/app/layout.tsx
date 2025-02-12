@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { IconUser } from "@tabler/icons-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <nav className="flex flex-col md:flex-row justify-between items-center p-4 w-[90%] mx-auto bg-purple-600 text-white rounded-full mt-2">
+          <h1 className="text-2xl font-bold">PLAYWISE</h1>
+          <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 mt-4 md:mt-0">
+            <li>
+              <a href="/" className="hover:text-purple-300 transition-colors duration-300">Home</a>
+            </li>
+            <li>
+              <a href="/about" className="hover:text-purple-300 transition-colors duration-300">About</a>
+            </li>
+          </ul>
+          <IconUser className="mt-4 md:mt-0 hover:text-purple-300 transition-colors duration-300"/>
+        </nav>
         {children}
       </body>
     </html>
